@@ -81,4 +81,8 @@ const cardsData = [
   },
 ];
 
-export {cardsData};
+const genres = ['Comedy', 'Crime', 'Documentary', 'Dramas', 'Horror', 'Kids & Family', 'Romance', 'Sci-Fi', 'Thriller'];
+
+const years = ['2014', '2015', '2016', '2017', '2020', '2021', '2022'];
+
+export {cardsData, genres, years};

@@ -1,4 +1,10 @@
-function CardFilmComponent(): JSX.Element {
+/* eslint-disable jsx-a11y/anchor-is-valid */
+type CardFilmProps = {
+  img: string;
+  descr: string;
+}
+
+function CardFilmComponent({img, descr}: CardFilmProps): JSX.Element {
   return (
     <article className="small-film-card catalog__films-card">
       <div className="small-film-card__image">
