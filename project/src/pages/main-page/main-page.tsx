@@ -1,4 +1,5 @@
 import CardFilmComponent from '../../components/card-film/card-film';
+import { cardsData } from '../variables';
 
 const CARDS_NUMBER = 20;
 
@@ -140,10 +141,7 @@ function MainPageScreen(): JSX.Element {
           </ul>
 
           <div className="catalog__films-list">
-            let rows = [];
-            for (let i = 0; i < CARDS_NUMBER; i++) {
-              rows.push(<CardFilmComponent key={i} />)
-            }
+            {cardsData.map(card => <СardFilmComponent descr={card.description} img={card.image} />)}
           </div>
 
           <div className="catalog__more">
