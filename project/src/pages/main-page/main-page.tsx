@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import CardFilmComponent from '../../components/card-film/card-film';
-import { cardsData, genres, years } from '../variables';
+import { cardsData, genres, years } from '../data';
 import FilmTitleComponent from '../../components/film-title/film-title';
 
 function MainPageScreen(): JSX.Element {
