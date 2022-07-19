@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import CardFilmComponent from '../../components/card-film/card-film';
-import { cardsData, genres, years } from '../variables';
+import { cardsData, genres, years } from '../data';
 import FilmTitleComponent from '../../components/film-title/film-title';
+import React from 'react';
 
 function MainPageScreen(): JSX.Element {
   return (
-    <body>
+    <React.Component>
       <div className="visually-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <symbol id="add" viewBox="0 0 19 20">
@@ -156,7 +157,7 @@ function MainPageScreen(): JSX.Element {
           </div>
         </footer>
       </div>
-    </body>
+    </React.Component>
   );
 }
 
