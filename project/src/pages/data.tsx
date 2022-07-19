@@ -87,7 +87,7 @@ const genres = ['Comedy', 'Crime', 'Documentary', 'Drama', 'Horror', 'Kids & Fam
 
 const years = ['2014', '2015', '2016', '2017', '2020', '2021', '2022'];
 
-const getRandomArrayElement = (elements) => elements[getRandomIntInclusive(0, elements.length - 1)];
+const getRandomArrayElement = (elements: string | any[]) => elements[getRandomIntInclusive(0, elements.length - 1)];
 
 const filmData = {
   id: getRandomIntInclusive(1, 200),

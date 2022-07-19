@@ -12,15 +12,20 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPageScreen />} />
-        <Route path="/login" element={<SignInScreen />} />
-        <Route path="/mylist" element={<MyListScreen />} />
-        <Route path="/films/:id/review" element={<AddReviewScreen />} />
-        <Route path="/player/:id" element={<PlayerScreen />} />
-        <Route path="/films" element={<MoviePageScreen />}>
-          <Route path=":id" element={<MoviePageScreen moovies={filmData} />} />
-        </Route>
-        <Route path="*" element={<NotFoundScreen />} />
+        <Route path="/" >
+          <Route index element={<MainPageScreen />} />
+          <Route path="/login" element={<SignInScreen />} />
+          <Route path="/mylist" element={<MyListScreen />} />
+          <Route path="/player/" >
+            <Route path=":id" element={<PlayerScreen />} />
+          </Route>
+          <Route path="/films/">
+            <Route path=":id" element={<MoviePageScreen name={filmData.name} genre={filmData.genre} released={filmData.released} />} >
+              <Route path="/review" element={<AddReviewScreen />} />
+            </Route>
+          </Route>
+          <Route path="*" element={<NotFoundScreen />} />
+        </ Route>
       </Routes>
     </BrowserRouter>
   );

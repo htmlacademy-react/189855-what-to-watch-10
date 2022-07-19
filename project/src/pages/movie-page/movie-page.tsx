@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { useParams } from 'react-router-dom';
 
-import { filmData } from '../data';
+type FilmDataProps = {
+  name: string;
+  genre: string;
+  released: number;
+}
 
-function MoviePageScreen({moovies}): JSX.Element {
-  const params = useParams();
-  const moovie = moovies.find((moovie) => moovie.id === params.id);
+function MoviePageScreen({name, genre, released}: FilmDataProps): JSX.Element {
   return (
-    <body>
+    <React.Component>
       <div className="visually-hidden">
 
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -48,7 +49,7 @@ function MoviePageScreen({moovies}): JSX.Element {
       <section className="film-card film-card--full">
         <div className="film-card__hero">
           <div className="film-card__bg">
-            <img src="img/bg-the-grand-budapest-hotel.jpg" alt={moovie.name} />
+            <img src="img/bg-the-grand-budapest-hotel.jpg" alt={name} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -76,10 +77,10 @@ function MoviePageScreen({moovies}): JSX.Element {
 
           <div className="film-card__wrap">
             <div className="film-card__desc">
-              <h2 className="film-card__title">{moovie.name}</h2>
+              <h2 className="film-card__title">{name}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">{moovie.genre}</span>
-                <span className="film-card__year">{moovie.released}</span>
+                <span className="film-card__genre">{genre}</span>
+                <span className="film-card__year">{released}</span>
               </p>
 
               <div className="film-card__buttons">
@@ -202,7 +203,7 @@ function MoviePageScreen({moovies}): JSX.Element {
           </div>
         </footer>
       </div>
-    </body>
+    </React.Component>
   );
 }
 
